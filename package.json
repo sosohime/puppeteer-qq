@@ -1,0 +1,23 @@
+{
+  "name": "puppeteer-qq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosohime/puppeteer-qq.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosohime/puppeteer-qq/issues"
+  },
+  "homepage": "https://github.com/sosohime/puppeteer-qq#readme",
+  "dependencies": {
+    "puppeteer": "^1.10.0",
+    "puppeteer-core": "^1.10.0"
+  }
+}
