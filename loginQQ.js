@@ -177,7 +177,8 @@ async function drag(distance) {
             })
         } else {
             console.log(distanceError.length + '次滑动失败，程序退出')
-            process.exit()
+            loginQQ()
+            // process.exit()
         }
     }
 }
