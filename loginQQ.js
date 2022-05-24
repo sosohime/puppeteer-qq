@@ -2,7 +2,10 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 const puppeteer = require('puppeteer');
 
-const account = require('./accounts');
+const account = {
+    qq: '228664738',
+    pwd: 'Supersoso2021'
+}
 
 let timeout = function (delay) {
     return new Promise((resolve, reject) => {
@@ -35,17 +38,18 @@ async function loginQQ(qq, pwd) {
     page = await browser.newPage();
 
     // 1.打开qq登陆页
-    await page.goto('https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=15000103&s_url=http%3A%2F%2Fe.qq.com%2F');
+    // await page.goto('https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=15000103&s_url=http%3A%2F%2Fe.qq.com%2F');
+    await page.goto('https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=716027609&daid=383&style=33&login_text=授权并登录&hide_title_bar=1&hide_border=1&target=self&s_url=http%3A%2F%2Fe.qq.com%2F')
     await timeout(1000);
 
     // 2.打开登录页面
     page.click('#switcher_plogin')
-    await timeout(100);
+    await timeout(1000);
 
     // 3.输入账号密码
-    page.type('#u', qq || account.qq)
+    page.type('#u', account.qq)
     await timeout(500);
-    page.type('#p', pwd || account.pwd)
+    page.type('#p', account.pwd)
     await timeout(1000);
 
     // 4.点击登陆
