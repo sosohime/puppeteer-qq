@@ -3,8 +3,8 @@ const { spawnSync } = require('child_process');
 const puppeteer = require('puppeteer');
 
 const account = {
-    qq: '228664738',
-    pwd: 'Supersoso2021'
+    qq: process.env.qq_account
+    pwd: process.env.qq_pwd
 }
 
 let timeout = function (delay) {
